@@ -33,7 +33,7 @@ public class MainApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MainApplication.class, args);
 		// run serve pro RestController funcionar no MainAplication.
-		System.out.println("Rede Social Backend está rodando! \n em http://localhost:8087");
+		System.out.println("\n A Rede Social Backend está rodando! \n em http://localhost:8087");
 
 	}
 
