@@ -56,7 +56,8 @@ public class PetsGUI {
      * App description:
      * Desafio empresa appmoove
      * 
-     * Minha API PRO GATO: ->
+     * Minha API PRO GATO: ->Here's your API key:
+     * live_cn9U3MpBSnW3JQmDPIFL48UiMUO1MLKGb8FOJCbli0oD59QW0Qu9OxMzRA05nD9l
      * 
      * Minha API PRO CACHORRO: -> Here's your API key:
      * live_kxfKAYcWTviLVSWSPYP6iGcw5ltIbOGfaZfHESPpxK6PalKptTRnmzp6H8zlauxP

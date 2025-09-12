@@ -1,0 +1,13 @@
+.irritado {
+    color: #d3d4e4;
+}
+
+@media (max-width: 990px) {
+    /* { 
+  bora bill
+  } */
+
+    .irritado {
+        color: #39df47;
+    }
+}

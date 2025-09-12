@@ -1,0 +1,22 @@
+.ronaldo {
+    color: #d3d4e4;
+}
+
+.ronaldo2 {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+@media (max-width: 990px) {
+    /* { 
+  bora bill
+  } */
+    .ronaldo {
+        color: #35dc1f;
+    }
+
+    .ronaldo2 {
+        padding: 5px;
+        border: 1px solid rgb(148, 62, 62);
+    }
+}

@@ -19,3 +19,25 @@ Enviar link do GitHub ou .zip para testes.rh@appmoove.com.br
 -   Como iniciar backend e frontend.
 -   Como rodar testes e gerar cobertura.
 -   (Opcional) Swagger e exemplos de requisição.
+
+## PRA RODAR COISAS NO FRONTEND
+
+npx
+-> create-vite frontend-react-pets
+
+│
+◇ Select a framework:
+│ React
+│
+◇ Select a variant:
+│ TypeScript + SWC
+│
+◇ Scaffolding project in C:\Users\Usuario\Documents\centro_vscode\zzz SOFTWARE GERAL DIVERSOS\Appmoove_gerenciador_de_pets_teste\FrontEnd\frontend-react-pets...
+│
+└ Done. Now run:
+
+cd frontend-react-pets
+npm install
+npm run dev
+
+vrau
