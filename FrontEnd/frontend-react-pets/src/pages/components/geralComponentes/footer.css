@@ -1,0 +1,24 @@
+footer {
+    display: flex;
+    height: 70px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+
+.itemDoFooter {
+    margin: 5px 30px;
+}
+
+@media (max-width: 990px) {
+    /* xesque */
+
+    footer {
+        display: initial;
+        height: auto;
+    }
+
+    .itemDoFooter {
+        margin: 5px;
+    }
+}

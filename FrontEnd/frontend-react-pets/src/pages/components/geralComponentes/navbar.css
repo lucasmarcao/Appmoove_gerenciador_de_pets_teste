@@ -1,0 +1,13 @@
+.nav-pet-desafio {
+    height: 70px;
+    border-bottom: 2px solid black;
+}
+
+@media (max-width: 990px) {
+    /* xesque */
+
+    .nav-pet-desafio {
+        height: auto;
+        text-align: center;
+    }
+}

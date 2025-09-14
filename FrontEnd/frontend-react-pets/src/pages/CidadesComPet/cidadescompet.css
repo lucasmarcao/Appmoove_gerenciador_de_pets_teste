@@ -1,0 +1,18 @@
+.maximoScroll {
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+.papaiscrol {
+    padding: 5px;
+    border: 2px solid black;
+}
+
+@media (max-width: 990px) {
+    /* xesque */
+
+    .maximoScroll {
+        max-height: 52vh;
+        overflow-y: auto;
+    }
+}

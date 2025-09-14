@@ -3,12 +3,20 @@ package appmoove_BackEnd.GUI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 
 import appmoove_BackEnd.DAOs.PetsDAO;
+import appmoove_BackEnd.DAOs.PetsSpecification;
 import appmoove_BackEnd.Entidade.Pets;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping({ "/pets", "/pets/", "/pet", "/pet/" })
@@ -32,45 +40,53 @@ public class PetsGUI {
         }
     }
 
-    /*
-     * GET /breeds/:species Integração com TheDogAPI (dog) ou TheCatAPI (cat).
-     * por nome. Normalizar a resposta para { name, origin
-     * energy_level, image_url } .
-     * 
-     * https://docs.thedogapi.com/docs/examples/images
-     * 
-     * https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=gpN
-     * -ReBkp
-     * 
-     * 
-     * Search images: dog cachorro
-     * curl -H "x-api-key: YOUR-API-KEY"
-     * "https://api.thedogapi.com/v1/images/search?limit=2"
-     * 
-     * 
-     * Example of how to filter Images by Breed: cat gato
-     * endpoint: ./breeds
-     * e.g. https://api.thecatapi.com/v1/images/search?breed_ids={breed.id}
-     * 
-     * lucas2004marcao@gmail.com
-     * App description:
-     * Desafio empresa appmoove
-     * 
-     * Minha API PRO GATO: ->Here's your API key:
-     * live_cn9U3MpBSnW3JQmDPIFL48UiMUO1MLKGb8FOJCbli0oD59QW0Qu9OxMzRA05nD9l
-     * 
-     * Minha API PRO CACHORRO: -> Here's your API key:
-     * live_kxfKAYcWTviLVSWSPYP6iGcw5ltIbOGfaZfHESPpxK6PalKptTRnmzp6H8zlauxP
-     * 
-     * 
-     * dog exe
-     * 
-     */
-
-    // READ ALL
+    // GET /pets com filtros e paginação
     @GetMapping
-    public List<Pets> listAll() {
-        return petsDAO.findAll();
+    public ResponseEntity<Map<String, Object>> listWithFilters(
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String species,
+            @RequestParam(required = false) String breed,
+            @RequestParam(required = false) String shelter_city,
+            @RequestParam(required = false) String status,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "9") int size,
+            @RequestParam(defaultValue = "createdAt") String sortBy,
+            @RequestParam(defaultValue = "desc") String order) {
+
+        try {
+            // Criar Specification com os filtros
+            Specification<Pets> spec = PetsSpecification.withFilters(
+                    name, species, breed, shelter_city, status);
+
+            // Criar Pageable com ordenação
+            Sort.Direction direction = order.equalsIgnoreCase("asc") ? Sort.Direction.ASC : Sort.Direction.DESC;
+            Pageable pageable = PageRequest.of(page, size, Sort.by(direction, sortBy));
+
+            // Executar a consulta
+            Page<Pets> petsPage = petsDAO.findAll(spec, pageable);
+
+            // Preparar a resposta
+            Map<String, Object> response = new HashMap<>();
+            response.put("total", petsPage.getTotalElements());
+            response.put("page", petsPage.getNumber());
+            response.put("size", petsPage.getSize());
+            response.put("content", petsPage.getContent());
+
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            Map<String, Object> errorResponse = new HashMap<>();
+            errorResponse.put("error", "Erro ao buscar pets: " + e.getMessage());
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(errorResponse);
+        }
+    }
+
+    // READ BY cidade
+    @GetMapping({ "/shelter-city/{shelterCity}", "/shelter-city/{shelterCity}/"
+    })
+    public List<Pets> listByShelterCity(@PathVariable String shelterCity) {
+        return petsDAO.findByShelterCity(shelterCity);
     }
 
     // READ BY STATUS
