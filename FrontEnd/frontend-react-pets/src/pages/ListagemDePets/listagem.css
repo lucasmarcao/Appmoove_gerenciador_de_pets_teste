@@ -1,0 +1,127 @@
+.ListPai {
+    width: 98%;
+    padding: 18px 14px;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.irritado {
+    word-break: break-all;
+}
+
+.sticky-card {
+    position: sticky;
+    top: 90px;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card .carousel .carousel-item img {
+    object-fit: cover;
+    height: 220px;
+    width: 100%;
+}
+
+.badge {
+    font-weight: 600;
+}
+
+.form-control,
+.form-select {
+    min-height: 42px;
+}
+
+.btn-group .btn {
+    min-width: 50px;
+}
+
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#petsGrid .card {
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+#petsGrid .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(18, 30, 50, 0.08);
+}
+
+.offcanvas {
+    --bs-offcanvas-width: 320px;
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+#orderDropdown {
+    padding: 10px;
+}
+
+@media (max-width: 990px) {
+    .sticky-card {
+        position: static;
+        top: 0;
+    }
+
+    .card .carousel .carousel-item img {
+        height: 150px;
+    }
+
+    .card .card-body {
+        padding: 12px;
+    }
+
+    .form-control,
+    .form-select,
+    .btn {
+        font-size: 0.98rem;
+        padding: 10px 12px;
+    }
+
+    #petsGrid .card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .ListPai {
+        width: 280px;
+        padding: 6px;
+    }
+
+    .card .carousel .carousel-item img {
+        height: 120px;
+    }
+
+    #orderDropdown {
+        width: 220px;
+        margin: 10px 0;
+    }
+
+    #perPage {
+        min-width: 100%;
+        padding: 5px 15px;
+    }
+    .offcanvas {
+        --bs-offcanvas-width: 100%;
+    }
+
+    .btn-group .btn {
+        padding: 8px 10px;
+    }
+}

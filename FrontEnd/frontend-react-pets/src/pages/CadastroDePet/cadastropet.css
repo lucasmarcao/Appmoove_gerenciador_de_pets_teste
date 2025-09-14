@@ -1,0 +1,87 @@
+.centro {
+    padding: 18px 12px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.card-header h4 {
+    margin-bottom: 0;
+}
+
+.badge {
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.form-text {
+    font-size: 0.85rem;
+}
+
+.invalid-feedback {
+    display: block;
+}
+
+.progress {
+    height: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.limparpet {
+    margin-right: 10px !important;
+}
+
+.salvarpet {
+    margin-left: 10px !important;
+}
+
+@media (max-width: 990px) {
+    .centro {
+        padding: 12px 10px;
+    }
+
+    .card {
+        box-shadow: none;
+    }
+
+    .card-header {
+        padding: 12px 14px;
+    }
+
+    .card-body {
+        padding: 12px;
+    }
+
+    .form-label {
+        font-size: 0.95rem;
+    }
+
+    .form-control,
+    .form-select,
+    .btn {
+        font-size: 0.98rem;
+        padding: 10px 12px;
+    }
+
+    .accordion-button {
+        padding: 10px 14px;
+    }
+
+    .progress {
+        height: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-header h4 {
+        font-size: 1.05rem;
+    }
+
+    .d-flex .badge {
+        display: none;
+    }
+
+    .input-group .btn {
+        padding: 8px 10px;
+    }
+}

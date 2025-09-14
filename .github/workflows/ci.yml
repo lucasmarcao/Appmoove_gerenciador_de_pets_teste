@@ -1,0 +1,54 @@
+name: CI
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    backend-tests:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Setup Java
+              uses: actions/setup-java@v3
+              with:
+                  distribution: "temurin"
+                  java-version: 17
+
+            - name: Build e testar backend
+              run: mvn clean test
+              working-directory: ./backend
+
+            - name: Upload cobertura backend
+              uses: actions/upload-artifact@v4
+              with:
+                  name: coverage-backend
+                  path: backend/target/site/jacoco
+
+    frontend-tests:
+        runs-on: ubuntu-latest
+        needs: backend-tests
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+
+            - name: Instalar dependências frontend
+              run: npm ci
+              working-directory: ./frontend
+
+            - name: Testar frontend com cobertura
+              run: npx vitest run --coverage
+              working-directory: ./frontend
+
+            - name: Upload cobertura frontend
+              uses: actions/upload-artifact@v4
+              with:
+                  name: coverage-frontend
+                  path: frontend/coverage

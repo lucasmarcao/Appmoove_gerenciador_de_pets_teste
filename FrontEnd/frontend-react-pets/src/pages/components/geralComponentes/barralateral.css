@@ -1,0 +1,18 @@
+.barraLateral {
+    text-align: center;
+}
+
+.linkBarraLateral {
+    text-decoration: none;
+}
+
+.fechaBarraLateral {
+    margin-right: 8px;
+}
+
+@media (max-width: 990px) {
+    /* { bora bill  } */
+    .barraLateral {
+        display: none;
+    }
+}
