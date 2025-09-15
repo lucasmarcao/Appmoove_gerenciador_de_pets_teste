@@ -52,6 +52,12 @@ export interface BreedPage {
     content: Breed[];
 }
 
+export interface CidadesBrasil {
+    shelterCity: string;
+    shelterLat: number;
+    shelterLng: number;
+}
+
 function normalizePet(
     pet: Omit<MyPet, "createdAt"> & { createdAt: string | Date }
 ): MyPet {

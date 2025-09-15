@@ -35,6 +35,22 @@
     margin-left: 10px !important;
 }
 
+.dropdown-menu {
+    z-index: 1000;
+}
+
+.dropdown-item {
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.input-group .btn {
+    border-left: 0;
+}
+
 @media (max-width: 990px) {
     .centro {
         padding: 12px 10px;

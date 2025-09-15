@@ -78,6 +78,12 @@ public class MainApplication {
 				Frontend: React ou VueJS.
 				</p>
 
+				<hr>
+				<h4>
+				Acesso ao swagger:
+				http://localhost:8087/swagger-ui/index.html
+				</h4>
+
 				""";
 		return obrigado;
 	}

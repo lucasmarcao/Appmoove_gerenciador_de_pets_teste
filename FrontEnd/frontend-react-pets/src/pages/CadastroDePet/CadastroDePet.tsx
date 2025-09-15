@@ -1,11 +1,32 @@
 import { useState } from "react";
 import { createPet } from "../ts/requisicoes";
-import type { MyPet, NewPet } from "../ts/requisicoes";
+import type { CidadesBrasil, MyPet, NewPet } from "../ts/requisicoes";
 import { Link, useNavigate } from "react-router-dom";
 import "./cadastropet.css";
+import DropdownCidades from "../components/DropdownCidades/DropdownCidades";
 
 export default function CadastroDePet() {
+    const [selectedCity, setSelectedCity] = useState<CidadesBrasil | null>(
+        null
+    );
     const navigate = useNavigate();
+
+    // Adicione esta função no componente CadastroDePet
+    const handleCitySelect = (cidade: CidadesBrasil) => {
+        setSelectedCity(cidade);
+        setForm((prev) => ({
+            ...prev,
+            shelterCity: cidade.shelterCity,
+            shelterLat: cidade.shelterLat,
+            shelterLng: cidade.shelterLng,
+        }));
+
+        let spanzudo = document.querySelector(".spanzudo");
+
+        if (spanzudo) {
+            spanzudo!.innerHTML = `cidade selecionada: ${cidade.shelterCity}`;
+        }
+    };
 
     // estado do formulário
     const [form, setForm] = useState<NewPet>({
@@ -67,7 +88,7 @@ export default function CadastroDePet() {
             const novoPet: MyPet = await createPet(form);
             setSucesso(`Pet "${novoPet.name}" criado com sucesso!`);
             // redireciona para detalhes do pet em 2s
-            setTimeout(() => navigate(`/pets/${novoPet.id}`), 2000);
+            setTimeout(() => navigate(`/listagem-de-pets/`), 2000);
         } catch (err: any) {
             setErro(err.message || "Erro desconhecido");
         } finally {
@@ -165,14 +186,8 @@ export default function CadastroDePet() {
                                 <label className="form-label">
                                     Cidade do Abrigo
                                 </label>
-                                <input
-                                    type="text"
-                                    name="shelterCity"
-                                    className="form-control"
-                                    value={form.shelterCity}
-                                    onChange={handleChange}
-                                    disabled={loading}
-                                />
+                                <DropdownCidades onSelect={handleCitySelect} />
+                                <div className="spanzudo"></div>
                             </div>
 
                             <div className="col-12 col-md-6">
