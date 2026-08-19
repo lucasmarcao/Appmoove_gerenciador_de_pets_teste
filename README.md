@@ -1,30 +1,14 @@
-# 🐾 AdoteUmPet - Sistema de Gerenciamento de Pets para Adoção
+# AdoteUmPet - Sistema de Gerenciamento de Pets para Adoção
 
-## 👨‍💻 Desenvolvedor
-
-**Lucas Antônio Marcão**  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lucas-marcao/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lucasmarcao)
-
-**Formação:**
-
--   🎓 Técnico em Informática - UTFPR (Concluído)
--   🎓 Bacharelado em Ciências da Computação - UTFPR (Cursando)
-
-**Experiência Profissional:**
-
--   🏢 TYTOTECH CAMPO MOURÃO - Estagiário Front-End (2021-2022)
--   💻 Desenvolvimento Angular, PHP, React, integração com APIs
-
-## 📋 Sobre o Projeto
+##  Sobre o Projeto
 
 O **AdoteUmPet** é uma aplicação completa para gerenciamento de pets disponíveis para adoção, com integração a APIs externas para obtenção de informações sobre raças de cães e gatos.
 
-### 🎯 Objetivo
+###  Objetivo
 
 Construir uma aplicação completa para gerenciar pets para adoção e consultar informações de raças, atendendo a todos os requisitos do desafio técnico.
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 ### Backend
 
@@ -46,31 +30,31 @@ Construir uma aplicação completa para gerenciar pets para adoção e consultar
 | Chart.js     | 4.4+   | Gráficos e visualizações |
 | React Router | 6.8+   | Roteamento SPA           |
 
-## 🚀 Funcionalidades Implementadas
+##  Funcionalidades Implementadas
 
-### ✅ Requisitos Obrigatórios
+###  Requisitos Obrigatórios
 
 | Funcionalidade          | Status      | Detalhes                            |
 | ----------------------- | ----------- | ----------------------------------- |
-| **Backend API REST**    | ✅ Completo | Java Spring Boot com PostgreSQL     |
-| **Banco de Dados**      | ✅ Completo | Tabela pets com todas as colunas    |
-| **CRUD Completo**       | ✅ Completo | Create, Read, Update, Delete        |
-| **Filtros e Paginação** | ✅ Completo | Nome, espécie, raça, cidade, status |
-| **Integração com APIs** | ✅ Completo | TheDogAPI e TheCatAPI               |
-| **Frontend React**      | ✅ Completo | Interface responsiva e moderna      |
+| **Backend API REST**    |  Completo | Java Spring Boot com PostgreSQL     |
+| **Banco de Dados**      |  Completo | Tabela pets com todas as colunas    |
+| **CRUD Completo**       |  Completo | Create, Read, Update, Delete        |
+| **Filtros e Paginação** |  Completo | Nome, espécie, raça, cidade, status |
+| **Integração com APIs** |  Completo | TheDogAPI e TheCatAPI               |
+| **Frontend React**      |  Completo | Interface responsiva e moderna      |
 
-### 📊 Páginas e Componentes
+###  Páginas e Componentes
 
 | Página                      | Descrição                      | Status |
 | --------------------------- | ------------------------------ | ------ |
-| **Home**                    | Página inicial                 | ✅     |
-| **Listagem de Pets**        | Filtros, paginação e ordenação | ✅     |
-| **Cadastro de Pet**         | Formulário com validações      | ✅     |
-| **Detalhe do Pet**          | Informações completas + mapa   | ✅     |
-| **Explorar Raças**          | Integração com APIs externas   | ✅     |
-| **Gráfico de Distribuição** | Chart.js com faixas etárias    | ✅     |
+| **Home**                    | Página inicial                 | feito     |
+| **Listagem de Pets**        | Filtros, paginação e ordenação | feito     |
+| **Cadastro de Pet**         | Formulário com validações      | feito     |
+| **Detalhe do Pet**          | Informações completas + mapa   | feito     |
+| **Explorar Raças**          | Integração com APIs externas   | feito     |
+| **Gráfico de Distribuição** | Chart.js com faixas etárias    | feito     |
 
-## 🗃️ Estrutura do Banco de Dados
+##  Estrutura do Banco de Dados
 
 ### Tabela `pets`
 
@@ -89,7 +73,7 @@ CREATE TABLE pets (
 );
 ```
 
-## 🌐 Endpoints da API
+##  Endpoints da API
 
 ### Pets Endpoints
 
@@ -127,7 +111,7 @@ CREATE TABLE pets (
 }
 ```
 
-## ⚙️ Como Executar o Projeto
+##  Como Executar o Projeto
 
 ### Pré-requisitos
 
@@ -205,7 +189,7 @@ npm run dev
 -   Frontend: http://localhost:5173
 -   Backend: http://localhost:8087
 
-## 🧪 Testes
+##  Testes
 
 ### Executar Testes no Backend
 
@@ -230,7 +214,7 @@ mvn jacoco:report
 
 ## 📋 Checklist de Implementação
 
-### Backend ✅
+### Backend 
 
 -   [x] API REST com Spring Boot
 -   [x] Modelo de dados com JPA/Hibernate
@@ -241,7 +225,7 @@ mvn jacoco:report
 -   [x] Tratamento de erros
 -   [x] Validações de dados
 
-### Frontend ✅
+### Frontend 
 
 -   [x] Interface React com TypeScript
 -   [x] Listagem com filtros e paginação
@@ -252,7 +236,7 @@ mvn jacoco:report
 -   [x] Design responsivo com Bootstrap
 -   [x] Gestão de estado
 
-### Funcionalidades Específicas ✅
+### Funcionalidades Específicas 
 
 -   [x] Filtros: nome, espécie, raça, cidade, status
 -   [x] Paginação e ordenação
@@ -261,29 +245,29 @@ mvn jacoco:report
 -   [x] Gráfico de distribuição etária
 -   [x] Dropdown de cidades brasileiras
 
-## 🎨 Diferenciais Implementados
+##  Diferenciais Implementados
 
-### ⭐ Funcionalidades Avançadas
+###  Funcionalidades Avançadas
 
 -   **Design Responsivo**: Interface adaptável para mobile e desktop
 -   **Experiência do Usuário**: Loading states, error handling, empty states
 -   **Performance**: Paginação eficiente para grandes conjuntos de dados
 -   **Validações**: Formulários com validação frontend e backend
 
-### 🔧 Boas Práticas
+###  Boas Práticas
 
 -   **Código Limpo**: Padrões consistentes e documentação
 -   **Separação de Conceitos**: Arquitetura em camadas
 -   **Variáveis de Ambiente**: Configuração segura com .env
 -   **Tratamento de Erros**: Mensagens amigáveis para usuários
 
-### 📊 Integrações
+###  Integrações
 
 -   **APIs Externas**: TheDogAPI e TheCatAPI com chaves configuráveis
 -   **Normalização de Dados**: Resposta padronizada das APIs externas
 -   **Fallbacks**: Imagens placeholder quando não disponíveis
 
-## 🤝 Contribuição
+##  Contribuição
 
 1. Faça um fork do projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
@@ -291,7 +275,7 @@ mvn jacoco:report
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📞 Contato
+##  Contato
 
 **Lucas Antônio Marcão**
 
@@ -299,11 +283,11 @@ mvn jacoco:report
 -   LinkedIn: [https://www.linkedin.com/in/lucas-marcao/](https://www.linkedin.com/in/lucas-marcao/)
 -   GitHub: [https://github.com/lucasmarcao](https://github.com/lucasmarcao)
 
-## 📄 Licença
+##  Licença
 
 Este projeto num tem licença :( .
 
-## 🙏 Agradecimentos
+##  Agradecimentos
 
 -   Equipe AppMoove pelo desafio técnico
 -   TheDogAPI e TheCatAPI pelos dados de raças
@@ -311,6 +295,6 @@ Este projeto num tem licença :( .
 
 ---
 
-**🐶🐱 AdoteUmPet - Tornando a adoção de pets mais fácil e eficiente!**
+** AdoteUmPet - Tornando a adoção de pets mais fácil e eficiente!**
 
 VRAUUUU !!!!
